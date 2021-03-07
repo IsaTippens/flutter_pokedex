@@ -19,9 +19,9 @@ ENV ANDROID_SDK_ARCHIVE="${ANDROID_HOME}/archive"
 ENV ANDROID_STUDIO_PATH="/home/gitpod/"
 
 RUN cd "${ANDROID_STUDIO_PATH}"
-RUN wget -qO android_studio.zip https://redirector.gvt1.com/edgedl/android/studio/ide-zips/4.1.2.0/android-studio-ide-201.7042882-linux.tar.gz
-RUN unzip android_studio.zip
-RUN rm -f android_studio.zip
+RUN wget -qO android_studio.tar.gz https://redirector.gvt1.com/edgedl/android/studio/ide-zips/4.1.2.0/android-studio-ide-201.7042882-linux.tar.gz
+RUN tar -xf android_studio.tar.gz
+RUN rm -f android_studio.tar.gz
 
 RUN mkdir -p "${ANDROID_HOME}"
 RUN touch $ANDROID_HOME/repositories.cfg
